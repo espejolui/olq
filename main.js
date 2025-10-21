@@ -9,11 +9,27 @@ const LIGHT_LOGO_SRC = "./assets/svg/titulo-clear.svg";
 const HEADER_IMG = "headerImg";
 const DARK_HEADER_IMG_SRC = "./assets/svg/header.svg";
 const LIGHT_HEADER_IMG_SRC = "./assets/svg/header-white.svg";
+const TUCAN_ID = "tucan";
+const DARK_TUCAN_SRC = "./assets/svg/toucan.svg";
+const LIGHT_TUCAN_SRC = "./assets/svg/toucan-white.svg";
+const GRAFIC_ID = "grafic";
+const DARK_GRAFIC_SRC = "./assets/svg/grafica.svg";
+const LIGHT_GRAFIC_SRC = "./assets/svg/grafica-white.svg";
+const GRAFIC_TWO_ID = "graficTwo";
+const DARK_GRAFIC_TWO_SRC = "./assets/svg/grafica2.svg";
+const LIGHT_GRAFIC_TWO_SRC = "./assets/svg/grafica2-white.svg";
+const TUCAN_TWO_ID = "tucanTwo";
+const DARK_TUCAN_TWO_SRC = "./assets/svg/toucan2.svg";
+const LIGHT_TUCAN_TWO_SRC = "./assets/svg/toucan2-white.svg";
 
 // 1. Elementos recuperados del DOM
 const themeSwitch = document.getElementById(THEME_SWITCH_ID);
 const logo = document.getElementById(LOGO_ID);
 const headerImg = document.getElementById(HEADER_IMG);
+const tucan = document.getElementById(TUCAN_ID);
+const grafic = document.getElementById(GRAFIC_ID);
+const graficTwo = document.getElementById(GRAFIC_TWO_ID);
+const tucanTwo = document.getElementById(TUCAN_TWO_ID);
 
 // 2. Función principal para cambiar el tema
 const toggleTheme = () => {
@@ -31,6 +47,18 @@ const toggleTheme = () => {
     if (headerImg) {
       headerImg.src = DARK_HEADER_IMG_SRC;
     }
+    if (tucan) {
+      tucan.src = DARK_TUCAN_SRC;
+    }
+    if (grafic) {
+      grafic.src = DARK_GRAFIC_SRC;
+    }
+    if (graficTwo) {
+      graficTwo.src = DARK_GRAFIC_TWO_SRC;
+    }
+    if (tucanTwo) {
+      tucanTwo.src = DARK_TUCAN_TWO_SRC;
+    }
   } else {
     // Agrego la clase y actualizo la llave localStorage que está definida por defecto
     document.body.classList.add(DARK_MODE_CLASS);
@@ -42,6 +70,18 @@ const toggleTheme = () => {
     }
     if (headerImg) {
       headerImg.src = LIGHT_HEADER_IMG_SRC;
+    }
+    if (tucan) {
+      tucan.src = LIGHT_TUCAN_SRC;
+    }
+    if (grafic) {
+      grafic.src = LIGHT_GRAFIC_SRC;
+    }
+    if (graficTwo) {
+      graficTwo.src = LIGHT_GRAFIC_TWO_SRC;
+    }
+    if (tucanTwo) {
+      tucanTwo.src = LIGHT_TUCAN_TWO_SRC;
     }
   }
 };
@@ -64,6 +104,26 @@ const initializeTheme = () => {
     headerImg.src = document.body.classList.contains(DARK_MODE_CLASS)
       ? LIGHT_HEADER_IMG_SRC
       : DARK_HEADER_IMG_SRC;
+  }
+  if (tucan) {
+    tucan.src = document.body.classList.contains(DARK_MODE_CLASS)
+      ? LIGHT_TUCAN_SRC
+      : DARK_TUCAN_SRC;
+  }
+  if (grafic) {
+    grafic.src = document.body.classList.contains(DARK_MODE_CLASS)
+      ? LIGHT_GRAFIC_SRC
+      : DARK_GRAFIC_SRC;
+  }
+  if (graficTwo) {
+    graficTwo.src = document.body.classList.contains(DARK_MODE_CLASS)
+      ? LIGHT_GRAFIC_TWO_SRC
+      : DARK_GRAFIC_TWO_SRC;
+  }
+  if (tucanTwo) {
+    tucanTwo.src = document.body.classList.contains(DARK_MODE_CLASS)
+      ? LIGHT_TUCAN_TWO_SRC
+      : DARK_TUCAN_TWO_SRC;
   }
 };
 
