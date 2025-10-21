@@ -116,3 +116,12 @@ links.forEach((link) => {
     menuBtn.setAttribute("aria-expanded", "false");
   });
 });
+
+// ------- JS para el leer ahora ------
+
+const readNow = document.getElementById("readNow");
+const readMore = document.getElementById("readMore");
+
+readNow.addEventListener("click", () => {
+  readMore.classList.toggle("active");
+});
