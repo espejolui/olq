@@ -33,3 +33,8 @@
         }
     }
 }
+
+.darkmode .read_more.active {
+    background-color: var(--black);
+    color: var(--white);
+}
