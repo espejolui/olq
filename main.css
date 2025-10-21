@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "literata";
+    src: url("./fonts/Literata-Regular.ttf") format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "jakarta_title";
+    src: url("./fonts/PlusJakartaSans-SemiBold.ttf") format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "jakarta";
+    src: url("./fonts/PlusJakartaSans-Regular.ttf") format("woff2");
+    font-weight: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --yellow: #ffd24e;
+    --blue: #010f3c;
+    --clear_violet: #9592f6;
+    --violet: #6040ed;
+    --gray_blue: #e5f3fc;
+    --orange: #dd3b10;
+    --violet_blue: #423eaf;
+    --sky_blue: #78b2f9;
+    --black: #000000;
+    --white: #ffffff;
+    --clear_grey: #f3fbff;
+}
+
+button {
+    border: none;
+}
+
+li,
+a {
+    list-style-type: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+p,
+a {
+    font-family: "jakarta";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+    font-family: "jakarta_title";
+}
+
+body {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+header {
+    padding: 10px 0;
+    nav {
+        .nav_container {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+
+            #logo {
+                width: 100px;
+                height: 100%;
+            }
+
+            .menu_container {
+                display: flex;
+                align-items: center;
+                column-gap: 15px;
+
+                .menu_btn {
+                    display: none;
+                    cursor: pointer;
+                    background-color: transparent;
+                    .menu_icon {
+                        fill: var(--blue);
+                    }
+                }
+
+                .nav_links {
+                    display: flex;
+                    gap: 10px;
+                }
+            }
+        }
+    }
+
+    @media (width <=768px) {
+        nav {
+            .nav_container {
+                width: 97%;
+
+                .menu_container {
+                    .menu_btn {
+                        width: 30px;
+                        height: 30px;
+                        display: block;
+                        z-index: 10;
+                        .menu_icon {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .nav_links {
+                        display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        flex-direction: column;
+                        align-items: start;
+                        width: 100%;
+                        height: 100dvh;
+                        padding: 10px 0;
+                        padding-top: 50px;
+                        text-align: center;
+                        color: var(--blue);
+                        background-color: var(--white);
+
+                        pointer-events: none;
+                    }
+
+                    .nav_links.active {
+                        display: grid;
+                        row-gap: 10px;
+                        align-content: start;
+                        pointer-events: all;
+                    }
+                }
+            }
+        }
+    }
+}

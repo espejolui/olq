@@ -1,0 +1,35 @@
+.darkmode {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+#theme_switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--gray_blue);
+    color: var(--blue);
+    cursor: pointer;
+
+    svg {
+        fill: var(--blue);
+    }
+
+    svg:last-child {
+        display: none;
+    }
+}
+
+.darkmode {
+    #theme_switch {
+        svg:first-child {
+            display: none;
+        }
+        svg:last-child {
+            display: block;
+        }
+    }
+}
