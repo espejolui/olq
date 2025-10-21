@@ -37,6 +37,8 @@
 
 button {
     border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 li,
@@ -91,7 +93,7 @@ header {
                     cursor: pointer;
                     background-color: transparent;
                     .menu_icon {
-                        fill: var(--blue);
+                        fill: var(--violet);
                     }
                 }
 
@@ -147,5 +149,35 @@ header {
                 }
             }
         }
+    }
+}
+
+.container_heider_img {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: center;
+
+    .header_img {
+        width: 100%;
+    }
+
+    .subtitle_container {
+        display: grid;
+
+        h2 {
+            margin-top: 28px;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 42px 0;
+        }
+    }
+    button {
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: var(--violet);
+        margin-bottom: 10px;
     }
 }
