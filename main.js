@@ -6,10 +6,14 @@ const LOCAL_STORAGE_KEY = "color-theme";
 const LOGO_ID = "logo";
 const DARK_LOGO_SRC = "./assets/svg/titulo-dark.svg";
 const LIGHT_LOGO_SRC = "./assets/svg/titulo-clear.svg";
+const HEADER_IMG = "headerImg";
+const DARK_HEADER_IMG_SRC = "./assets/svg/header.svg";
+const LIGHT_HEADER_IMG_SRC = "./assets/svg/header-white.svg";
 
 // 1. Elementos recuperados del DOM
 const themeSwitch = document.getElementById(THEME_SWITCH_ID);
 const logo = document.getElementById(LOGO_ID);
+const headerImg = document.getElementById(HEADER_IMG);
 
 // 2. Función principal para cambiar el tema
 const toggleTheme = () => {
@@ -20,18 +24,24 @@ const toggleTheme = () => {
     document.body.classList.remove(DARK_MODE_CLASS);
     localStorage.setItem(LOCAL_STORAGE_KEY, "light");
 
-    // ------ Aplicando el logo para Modo Claro ------
+    // ------ (a). Aplicando el logo para Modo Claro ------
     if (logo) {
       logo.src = DARK_LOGO_SRC;
+    }
+    if (headerImg) {
+      headerImg.src = DARK_HEADER_IMG_SRC;
     }
   } else {
     // Agrego la clase y actualizo la llave localStorage que está definida por defecto
     document.body.classList.add(DARK_MODE_CLASS);
     localStorage.setItem(LOCAL_STORAGE_KEY, DARK_MODE_VALUE);
 
-    // ------ Aplicando el logo para Modo Oscuro ------
+    // ------ (b). Aplicando el logo para Modo Oscuro ------
     if (logo) {
       logo.src = LIGHT_LOGO_SRC;
+    }
+    if (headerImg) {
+      headerImg.src = LIGHT_HEADER_IMG_SRC;
     }
   }
 };
@@ -44,11 +54,16 @@ const initializeTheme = () => {
     document.body.classList.add(DARK_MODE_CLASS);
   }
 
-  // ------ Aplicando el logo correcto al cargar la página ------
+  // ------ Aplicando las imagenes correctas al cargar la página ------
   if (logo) {
     logo.src = document.body.classList.contains(DARK_MODE_CLASS)
       ? LIGHT_LOGO_SRC
       : DARK_LOGO_SRC;
+  }
+  if (headerImg) {
+    headerImg.src = document.body.classList.contains(DARK_MODE_CLASS)
+      ? LIGHT_HEADER_IMG_SRC
+      : DARK_HEADER_IMG_SRC;
   }
 };
 
