@@ -179,9 +179,17 @@ links.forEach((link) => {
 
 // ------- JS para el leer ahora ------
 
-const readNow = document.getElementById("readNow");
-const readMore = document.getElementById("readMore");
+const readNowButton = document.getElementById("readNowButton");
+const readMoreContainer = document.getElementById("readMoreContainer");
+const backButton = document.getElementById("backButton");
 
-readNow.addEventListener("click", () => {
-  readMore.classList.toggle("active");
+readNowButton.addEventListener("click", () => {
+  readMoreContainer.classList.toggle("active");
+  readNowButton.classList.toggle("hidden");
+   
 });
+
+backButton.addEventListener("click", () => {
+  readNowButton.classList.toggle("view");
+   readMoreContainer.classList.remove("active");
+})
