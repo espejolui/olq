@@ -185,6 +185,7 @@ body {
         left: 0;
         right: 0;
         margin: auto;
+        padding: 0 30px;
         text-align: center;
         z-index: -1;
 
@@ -246,6 +247,7 @@ body {
     display: none;
     max-width: 1020px;
     margin: auto;
+    padding: 70px 100px 0 100px;
     justify-content: center;
     align-items: center;
     text-align: left;
