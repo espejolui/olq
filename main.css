@@ -187,7 +187,6 @@ body {
         margin: auto;
         text-align: center;
         z-index: -1;
-        background-color: red;
 
         .img_sticky {
             max-width: 1020px;
@@ -209,14 +208,17 @@ body {
 
 /* Estilos para los botones de leer ahora y para volver arriba */
 .read_now_button {
-        display: block;
-        margin: 100px auto;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: grid;
+        
         text-transform: uppercase;
         text-decoration: underline;
         color: var(--violet);
         z-index: 1;
         border: 1px solid green;
-        margin: 50px auto;
     }
 
 
