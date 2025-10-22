@@ -85,6 +85,8 @@ body {
     position: relative;
     min-width: 300px;
     max-width: 1080px;
+    margin: 0 auto;
+    border: 1px solid green;
 
     header {
         padding: 10px 0;
@@ -177,16 +179,19 @@ body {
     }
 
     .container_sticky {
+        max-width: 1020px;
         position: sticky;
         top: 0;
         left: 0;
         right: 0;
+        margin: auto;
         text-align: center;
         z-index: -1;
+        background-color: red;
 
         .img_sticky {
-            min-width: 300px;
-            max-width: 1080px;
+            max-width: 1020px;
+            margin: auto;
         }
 
         article {
@@ -202,29 +207,38 @@ body {
     }
 }
 
-#readNowButton {
-    margin: auto;
-    text-transform: uppercase;
-    text-decoration: underline;
-    color: var(--violet);
-    z-index: 1;
-}
+/* Estilos para los botones de leer ahora y para volver arriba */
+.read_now_button {
+        display: block;
+        margin: 100px auto;
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: var(--violet);
+        z-index: 1;
+        border: 1px solid green;
+        margin: 50px auto;
+    }
 
-#readNowButton.hidden{
+
+.read_now_button.hidden {
     display: none;
 }
 
-#readNowButton.view{
+.read_now_button.view {
     display: block;
 }
 
-.back_utton{
+.back_utton {
     display: none;
 }
 
 .back_button.active {
     display: block;
 }
+
+
+
+/* Estilos sección oculta por defecto */
 
 .read_more_container {
     display: none;

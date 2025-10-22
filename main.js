@@ -182,14 +182,30 @@ links.forEach((link) => {
 const readNowButton = document.getElementById("readNowButton");
 const readMoreContainer = document.getElementById("readMoreContainer");
 const backButton = document.getElementById("backButton");
+const mainContainer = document.querySelector(".main");
 
-readNowButton.addEventListener("click", () => {
-  readMoreContainer.classList.toggle("active");
-  readNowButton.classList.toggle("hidden");
-   
-});
+const handleReadNowClick = () => {
+  readNowButton.classList.add("hidden")
+  readMoreContainer.classList.add("active");
+  backButton.classList.add("active");
+  readMoreContainer.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
-backButton.addEventListener("click", () => {
-  readNowButton.classList.toggle("view");
-   readMoreContainer.classList.remove("active");
-})
+const handleBackButtonClick = () => {
+  readMoreContainer.classList.remove("active");
+  backButton.classList.remove("active");
+  readNowButton.classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+if (readNowButton) {
+  readNowButton.addEventListener("click", handleReadNowClick);
+}
+
+if (backButton) {
+  backButton.addEventListener("click", handleBackButtonClick);
+}
+
+if (readMoreContainer && !readMoreContainer.classList.contains("active")) {
+  backButton.classList.remove("active");
+}
