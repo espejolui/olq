@@ -87,7 +87,7 @@ body {
     margin: 0 auto;
     border: 1px solid green;
 
-    header {
+    .header {
         padding: 10px 0;
         max-width: 1080px;
         min-width: 300px;
@@ -100,7 +100,7 @@ body {
                 justify-content: space-between;
                 align-items: center;
 
-                #logo {
+                .logo {
                     width: 100px;
                     height: 100%;
                 }
