@@ -85,7 +85,6 @@ body {
     min-width: 300px;
     max-width: 1080px;
     margin: 0 auto;
-    border: 1px solid green;
 
     .header {
         padding: 10px 0;
@@ -229,7 +228,6 @@ body {
     text-decoration: underline;
     color: var(--violet);
     z-index: 1;
-    border: 1px solid green;
 }
 
 .read_now_button.hidden {
@@ -272,7 +270,6 @@ body {
     color: var(--blue);
     box-shadow: 0 4px 12px rgba(127, 171, 236, 0.1);
     z-index: 2;
-    border: 1px solid green;
 
     .table {
         margin-bottom: 40px;
@@ -393,11 +390,11 @@ body {
         justify-content: center;
         justify-items: center;
         padding: 0 100px 0 100px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
 
     @media (width <= 768px) {
-        .responsive,
-        .responsiveTow {
+        .responsive {
             padding: 0 20px;
         }
     }
@@ -408,21 +405,6 @@ body {
 .tucan_two {
     width: 100px;
     margin: 28px auto;
-}
-
-.responsiveTow {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    padding: 0 60px 0 60px;
-}
-
-body {
-    font-family: "Segoe UI", sans-serif;
-    background: #f4f9ff;
-    padding: 40px;
-    display: flex;
-    justify-content: center;
 }
 
 .table_wrapper {
@@ -655,7 +637,6 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
         justify-content: center;
         padding: 70px 100px 0 100px;
         margin: 0 30px;
-        border: 1px solid green;
 
         p {
             margin-bottom: 28px;
