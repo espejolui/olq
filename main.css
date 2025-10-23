@@ -235,12 +235,18 @@ body {
 }
 
 .back_button.active {
-  display: block;
+  display: grid;
+  position: fixed;
+  bottom: 20px;
+  right: 160px;
+  text-decoration: underline;
+  color: var(--violet_blue);
 }
 
 /* Estilos sección oculta por defecto */
 
 .read_more_container {
+  position: relative;
   display: none;
   max-width: 1020px;
   margin: auto;
