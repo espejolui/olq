@@ -122,7 +122,11 @@ body {
 
                     .nav_links {
                         display: flex;
-                        gap: 10px;
+                        gap: 60px;
+
+                        li {
+                            font-size: 14px;
+                        }
                     }
                 }
             }
