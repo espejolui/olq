@@ -153,17 +153,20 @@ const svgMenu = `<svg
 </svg>`;
 const svgClose = `<svg class="menu_icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>`;
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 
-  if (navLinks.classList.contains("active")) {
-    menuBtn.innerHTML = svgClose;
-    menuBtn.setAttribute("aria-expanded", "true");
-  } else {
-    menuBtn.innerHTML = svgMenu;
-    menuBtn.setAttribute("aria-expanded", "false");
-  }
-});
+    if (navLinks.classList.contains("active")) {
+      menuBtn.innerHTML = svgClose;
+      menuBtn.setAttribute("aria-expanded", "true");
+    } else {
+      menuBtn.innerHTML = svgMenu;
+      menuBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+/////
 
 if (!navLinks.classList.contains("active")) {
   menuBtn.innerHTML = svgMenu;
@@ -198,58 +201,58 @@ const handleBackButtonClick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-if (readNowButton) {
+if (readNowButton && readNowButton && backButton) {
   readNowButton.addEventListener("click", handleReadNowClick);
-}
-
-if (backButton) {
   backButton.addEventListener("click", handleBackButtonClick);
-}
 
-if (readMoreContainer && !readMoreContainer.classList.contains("active")) {
-  backButton.classList.remove("active");
+  if (readMoreContainer && !readMoreContainer.classList.contains("active")) {
+    backButton.classList.remove("active");
+  }
 }
 
 // ------ JS para botón view comments ------
 const commentsTwo = document.getElementById("commentsTwo");
 const viewCommentsButton = document.getElementById("viewCommentsButton");
 
-viewCommentsButton.addEventListener("click", () => {
-  commentsTwo.classList.toggle("active");
+if (viewCommentsButton && commentsTwo) {
+  viewCommentsButton.addEventListener("click", () => {
+    commentsTwo.classList.toggle("active");
 
-  if (commentsTwo.classList.contains("active")) {
-    viewCommentsButton.textContent = "View less";
-  } else {
-    viewCommentsButton.textContent = "View more comments";
-  }
-});
+    if (commentsTwo.classList.contains("active")) {
+      viewCommentsButton.textContent = "View less";
+    } else {
+      viewCommentsButton.textContent = "View more comments";
+    }
+  });
+}
 
 // JS para share button
 const shareButton = document.getElementById("shareButton");
 
-shareButton.addEventListener("click", async () => {
-  const shareData = {
-    title: document.title,
-    text: "Todo sobre lenguajes.",
-    url: window.location.href,
-  };
+if (shareButton) {
+  shareButton.addEventListener("click", async () => {
+    const shareData = {
+      title: document.title,
+      text: "Todo sobre lenguajes.",
+      url: window.location.href,
+    };
 
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-    } catch (error) {
-      console.log("Error al compartir:", error);
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (error) {
+        console.log("Error al compartir:", error);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        alert("¡El enlace se copió al portapapeles!");
+      } catch {
+        prompt(
+          "Tu navegador no soporta compartir. Copia el enlace:",
+          shareData.url,
+        );
+      }
     }
-  } else {
-    // Fallback: copiar al portapapeles
-    try {
-      await navigator.clipboard.writeText(shareData.url);
-      alert("¡El enlace se copió al portapapeles!");
-    } catch {
-      prompt(
-        "Tu navegador no soporta compartir. Copia el enlace:",
-        shareData.url,
-      );
-    }
-  }
-});
+  });
+}
