@@ -417,6 +417,97 @@ body {
     padding: 0 60px 0 60px;
 }
 
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f9ff;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.table_wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* suaviza el scroll en iOS */
+}
+
+.pricing_table {
+    width: 1080px;
+    min-width: 800px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+    th,
+    td {
+        border: 1px solid #00000030;
+        padding: 12px 16px;
+    }
+
+    thead th {
+        background-color: var(--violet);
+        color: var(--white);
+        font-weight: bold;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+tbody tr:nth-child(even):not(.featured-row):not(.gap):not(.total-row) {
+    background-color: var(--white);
+}
+
+tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
+    background-color: var(--white);
+}
+
+.featured-row {
+    background: var(--yellow);
+    font-weight: bold;
+}
+
+.total-row td:nth-child(3) {
+    background: var(--violet_blue);
+    color: var(--white);
+    text-align: center;
+    font-weight: bold;
+}
+
+.total-row td:last-child {
+    font-weight: bold;
+}
+
+.row-60 th {
+    height: 60px;
+}
+
+.row-100 td {
+    height: 100px;
+}
+
+.row-35 td {
+    height: 35px;
+}
+
+.row-55 td {
+    height: 55px;
+}
+
+/* Separadores visuales */
+.gap {
+    height: 20px;
+    background: #ffc0cb66;
+}
+
+.featured {
+    background: #5e6be1 !important;
+    color: white;
+}
+
 .read_more_container.active {
     display: grid;
 }
