@@ -209,3 +209,17 @@ if (backButton) {
 if (readMoreContainer && !readMoreContainer.classList.contains("active")) {
   backButton.classList.remove("active");
 }
+
+// ------ JS para botón view comments ------
+const commentsTwo = document.getElementById("commentsTwo");
+const viewCommentsButton = document.getElementById("viewCommentsButton");
+
+viewCommentsButton.addEventListener("click", () => {
+  commentsTwo.classList.toggle("active")
+
+  if(commentsTwo.classList.contains("active")){
+    viewCommentsButton.textContent = "View less"
+  }else{
+    viewCommentsButton.textContent = "View more comments"
+  }
+})
