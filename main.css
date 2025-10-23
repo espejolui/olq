@@ -269,13 +269,6 @@ body {
   z-index: 2;
   border: 1px solid green;
 
-  .tucan,
-  .almohada,
-  .tucan_two {
-    width: 100px;
-    margin: 28px auto;
-  }
-
   .table {
     margin-bottom: 40px;
   }
@@ -396,6 +389,14 @@ body {
     }
   }
 }
+
+.tucan,
+.almohada,
+.tucan_two {
+  width: 100px;
+  margin: 28px auto;
+}
+
 .responsiveTow {
   display: grid;
   justify-content: center;
@@ -471,49 +472,100 @@ body {
     text-align: right;
     width: 98%;
   }
+}
 
-  @media (width <= 768px) {
-    top: 16%;
+@media (width <= 768px) {
+  .title_container_about {
+    top: 12%;
 
     h1 {
       font-size: 25px;
-      text-align: right;
-      width: 98%;
     }
   }
 }
 
+.newsletter_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 30px 60px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow);
+
+  .newsletter_content {
+    display: grid;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .newsletter_form {
+    label,
+    button {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 400px;
+      height: 20px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      background-color: var(--white);
+    }
+
+    button {
+      width: 250px;
+      padding: 10px 20px;
+      height: 50px;
+      background-color: var(--violet_blue);
+    }
+  }
+
+  @media (width <= 768px) {
+    .newsletter_form {
+      input {
+        width: 300px;
+      }
+    }
+  }
+}
 
 /* Estilos para about*/
 
-.container_title_about{
+.container_title_about {
   margin: 60px 0 28px 0;
   text-align: center;
 }
 
-.container_subtitle_about{
-
-  h2{
+.container_subtitle_about {
+  h2 {
     text-align: center;
     margin-bottom: 42px;
   }
 
-  .content_about{
+  .content_about {
     display: grid;
     justify-content: center;
     padding: 70px 100px 0 100px;
     margin: 0 30px;
     border: 1px solid green;
 
-    p{
+    p {
       margin-bottom: 28px;
     }
   }
 
-  @media(width <= 768px){
-    .content_about{
+  @media (width <= 768px) {
+    .content_about {
       padding: 70px 10px 0 10px;
       margin: 0 20px;
     }
   }
+}
+
+.container_tucan_two {
+  display: grid;
+  justify-content: center;
+  margin-top: 100px;
 }
