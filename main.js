@@ -1,5 +1,5 @@
 // --- CONSTANTES ---
-const THEME_SWITCH_ID = "theme_switch";
+const THEME_SWITCH_ID = "themeSwitch";
 const DARK_MODE_CLASS = "darkmode";
 const DARK_MODE_VALUE = "dark";
 const LOCAL_STORAGE_KEY = "color-theme";
@@ -185,11 +185,11 @@ const backButton = document.getElementById("backButton");
 const mainContainer = document.querySelector(".main");
 
 const handleReadNowClick = () => {
-  readNowButton.classList.add("hidden")
+  readNowButton.classList.add("hidden");
   readMoreContainer.classList.add("active");
   backButton.classList.add("active");
   readMoreContainer.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+};
 
 const handleBackButtonClick = () => {
   readMoreContainer.classList.remove("active");
@@ -215,11 +215,41 @@ const commentsTwo = document.getElementById("commentsTwo");
 const viewCommentsButton = document.getElementById("viewCommentsButton");
 
 viewCommentsButton.addEventListener("click", () => {
-  commentsTwo.classList.toggle("active")
+  commentsTwo.classList.toggle("active");
 
-  if(commentsTwo.classList.contains("active")){
-    viewCommentsButton.textContent = "View less"
-  }else{
-    viewCommentsButton.textContent = "View more comments"
+  if (commentsTwo.classList.contains("active")) {
+    viewCommentsButton.textContent = "View less";
+  } else {
+    viewCommentsButton.textContent = "View more comments";
   }
-})
+});
+
+// JS para share button
+const shareButton = document.getElementById("shareButton");
+
+shareButton.addEventListener("click", async () => {
+  const shareData = {
+    title: document.title,
+    text: "Todo sobre lenguajes.",
+    url: window.location.href,
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (error) {
+      console.log("Error al compartir:", error);
+    }
+  } else {
+    // Fallback: copiar al portapapeles
+    try {
+      await navigator.clipboard.writeText(shareData.url);
+      alert("¡El enlace se copió al portapapeles!");
+    } catch {
+      prompt(
+        "Tu navegador no soporta compartir. Copia el enlace:",
+        shareData.url,
+      );
+    }
+  }
+});
