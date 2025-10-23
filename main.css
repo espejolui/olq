@@ -380,6 +380,14 @@ body {
         }
     }
 
+    @media (width <= 768px) {
+        .sidebar {
+            display: flex;
+            width: 200px;
+            border-radius: 0 30px 30px 0;
+        }
+    }
+
     .responsive {
         display: grid;
         justify-content: center;
