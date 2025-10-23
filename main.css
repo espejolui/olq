@@ -136,7 +136,7 @@ body {
     @media (width <=768px) {
       nav {
         .nav_container {
-          width: 100%;
+          width: 90%;
 
           .menu_container {
             .menu_btn {
@@ -209,10 +209,10 @@ body {
       }
     }
 
-    @media(width <= 768px){
-        .img_sticky{
-            height: 300px;
-        }
+    @media (width <= 768px) {
+      .img_sticky {
+        height: 300px;
+      }
     }
   }
 }
@@ -292,6 +292,11 @@ body {
     h4 {
       margin-bottom: 28px;
     }
+
+    @media (width <= 768px) {
+      padding: 60px 10;
+      margin: 28px 20px 0 20px;
+    }
   }
 
   .review_container {
@@ -311,9 +316,19 @@ body {
       padding: 60px 10px;
     }
 
-    @media (max-width: 768px) {
+    @media (width <= 768px) {
       flex-direction: column;
       padding-top: 30px;
+      margin: 60px 20px;
+    }
+  }
+
+  .comments_title {
+    margin: 140px 0 0 140px;
+    font-size: 25px;
+
+    @media (width <= 768px) {
+      margin-left: 40px;
     }
   }
 
@@ -332,6 +347,9 @@ body {
 
     .comments_two.active {
       display: grid;
+    }
+    @media (width <= 768px) {
+      margin: 100px 20px 0 20px;
     }
   }
 
@@ -363,6 +381,26 @@ body {
       }
     }
   }
+
+  .responsive {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding: 0 100px 0 100px;
+  }
+
+  @media (width <= 768px) {
+    .responsive,
+    .responsiveTow {
+      padding: 0 20px;
+    }
+  }
+}
+.responsiveTow {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  padding: 0 60px 0 60px;
 }
 
 .read_more_container.active {
@@ -382,7 +420,7 @@ body {
 
 .cards_container {
   display: grid;
-  gap: 30px ;
+  gap: 30px;
   max-width: 1080px;
   margin-bottom: 40px;
 
@@ -406,15 +444,41 @@ body {
     }
   }
 
-  @media (width <= 768px){
-    .cards_container{
-        width: 100%;
-        justify-content: center;
+  @media (width <= 768px) {
+    .cards_container {
+      width: 100%;
+      justify-content: center;
     }
 
-    div{
-        display: grid;
-        justify-content: center;
+    div {
+      display: grid;
+      justify-content: center;
+    }
+  }
+}
+
+.title_container_about {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  background-color: var(--violet_blue);
+  color: var(--white);
+
+  h1 {
+    font-size: 40px;
+    text-align: right;
+    width: 98%;
+  }
+
+  @media (width <= 768px) {
+    top: 16%;
+
+    h1 {
+      font-size: 25px;
+      text-align: right;
+      width: 98%;
     }
   }
 }
