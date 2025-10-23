@@ -465,7 +465,7 @@ body {
 
 .title_container_about {
     position: absolute;
-    top: 50%;
+    top: 350px;
     display: grid;
     align-items: center;
     width: 100%;
@@ -481,7 +481,7 @@ body {
 
 @media (width <= 768px) {
     .title_container_about {
-        top: 12%;
+        top: 320px;
 
         h1 {
             font-size: 25px;
@@ -544,6 +544,8 @@ body {
 }
 
 .container_subtitle_about {
+    margin-bottom: 80px;
+
     h2 {
         text-align: center;
         margin-bottom: 42px;

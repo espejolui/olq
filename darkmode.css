@@ -31,7 +31,12 @@
     }
 }
 
-.darkmode .read_more.active {
+.darkmode .read_more_container.active {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.darkmode .references {
     background-color: var(--black);
     color: var(--white);
 }
