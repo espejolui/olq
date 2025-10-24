@@ -76,7 +76,7 @@ blockquote {
 }
 
 body {
-    background-color: var(--white);
+    background-color: var(--clear_grey);
     color: var(--blue);
 }
 
@@ -85,6 +85,7 @@ body {
     min-width: 300px;
     max-width: 1080px;
     margin: 0 auto;
+    background-color: transparent;
 
     .header {
         padding: 10px 0;
@@ -266,9 +267,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: left;
-    background-color: var(--white);
+    background-color: var(--clear_grey);
     color: var(--blue);
-    box-shadow: 0 0 8px rgba(120, 178, 249, 1);
     z-index: 2;
 
     .table {
@@ -327,12 +327,17 @@ body {
         }
     }
 
-    .comments_container {
+    comments_container {
+        background-color: var(--white);
+        
+    }
+
+    .comments_sub_container {
         margin: 40px 120px 0 120px;
-        box-shadow: 0 0 8px rgba(120, 178, 249, 1);
 
         .shadow_div {
-            padding: 30px 10px;
+            padding: 60px 40px;
+            background-color: var(--white);
             box-shadow: 0 0 8px rgba(120, 178, 249, 1);
         }
 
@@ -385,12 +390,22 @@ body {
         }
     }
 
+    .publish{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 30px;
+        border-radius: 30px 0 0 30px;
+        background-color: var(--yellow);
+    }
+
     .responsive {
         display: grid;
         justify-content: center;
         justify-items: center;
-        padding: 0 100px 0 100px;
-        box-shadow: 0 0 8px rgba(120, 178, 249, 1);
+        padding: 0 100px 60px 100px;
+        background-color: var(--white);
+        box-shadow: 0 0 30px rgba(120, 178, 249, 1);
     }
 
     @media (width <= 768px) {
@@ -427,7 +442,7 @@ body {
     th,
     td {
         border: 1px solid #00000030;
-        padding: 12px 16px;
+        padding: 8px 12px;
     }
 
     thead th {
@@ -464,11 +479,11 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
 }
 
 .row-60 th {
-    height: 60px;
+    height: 40px;
 }
 
 .row-100 td {
-    height: 100px;
+    height: 60px;
 }
 
 .row-35 td {
