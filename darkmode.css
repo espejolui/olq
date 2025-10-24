@@ -34,16 +34,19 @@
 .darkmode .read_more_container.active {
   background-color: var(--black_clear);
   color: var(--white);
+  box-shadow: none; 
 }
 
 .darkmode .references {
   background-color: var(--black_clear);
   color: var(--white);
+  box-shadow: none;
 }
 
 .darkmode .responsive {
   background-color: var(--black);
   color: var(--white);
+  box-shadow: none;
 }
 
 .darkmode .shadow_div {
@@ -52,3 +55,13 @@
   box-shadow: none; 
 }
 
+.darkmode .review_container{
+    box-shadow: none;
+    background-color: var(--black_clear);
+}
+
+.darkmode .pricing_table tbody tr td{
+    border: 1px solid var(--white);
+    background-color: var(--black_clear);
+    color: var(--white);
+}
