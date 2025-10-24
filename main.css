@@ -584,11 +584,20 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
     background-position: center;
     background-repeat: no-repeat;
 
-    h1 {
+    div {
+        display: grid;
+        width: 100%;
+        height: 40px;
+        align-items: center;
         margin-top: 100px;
-        text-align: right;
         color: var(--white);
         background-color: var(--violet_blue);
+
+        h1 {
+            width: 97%;
+            height: 100%;
+            text-align: right;
+        }
     }
 }
 
