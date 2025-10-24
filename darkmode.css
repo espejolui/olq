@@ -65,3 +65,21 @@
     background-color: var(--black_clear);
     color: var(--white);
 }
+
+.darkmode .pricing_table tbody .featured-row td {
+    background-color: var(--yellow);
+}
+
+.darkmode .sidebar {
+    @media(width <= 768px){
+        display: none;
+    }
+}
+
+.darkmode .total-row td:nth-child(2) {
+  background: var(--violet_blue);   
+}
+
+.darkmode .total-row td:nth-child(1) {
+    border: none;
+}

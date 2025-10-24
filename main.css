@@ -466,11 +466,16 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
   font-weight: bold;
 }
 
-.total-row td:nth-child(3) {
+.total-row td:nth-child(2) {
   background: var(--violet_blue);
   color: var(--white);
   text-align: center;
   font-weight: bold;
+  border-radius: 0 0 8px 8px;
+}
+
+.total-row td:nth-child(1) {
+    border: none;
 }
 
 .total-row td:last-child {
