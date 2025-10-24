@@ -248,8 +248,12 @@ body {
     position: fixed;
     bottom: 20px;
     right: 180px;
-    text-decoration: underline;
-    color: var(--violet_blue);
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--yellow);
 }
 @media (width <=768px) {
     .back_button.active {
