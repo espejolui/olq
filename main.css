@@ -691,3 +691,11 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
         }
     }
 }
+
+.footer.home {
+    display: none;
+}
+
+.footer.home.active {
+    display: grid;
+}

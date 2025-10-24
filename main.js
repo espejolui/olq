@@ -186,11 +186,13 @@ const readNowButton = document.getElementById("readNowButton");
 const readMoreContainer = document.getElementById("readMoreContainer");
 const backButton = document.getElementById("backButton");
 const mainContainer = document.querySelector(".main");
+const footer = document.getElementById("footer");
 
 const handleReadNowClick = () => {
   readNowButton.classList.add("hidden");
   readMoreContainer.classList.add("active");
   backButton.classList.add("active");
+  footer.classList.add("active");
   readMoreContainer.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
@@ -198,6 +200,7 @@ const handleBackButtonClick = () => {
   readMoreContainer.classList.remove("active");
   backButton.classList.remove("active");
   readNowButton.classList.remove("hidden");
+  footer.classList.remove("active");
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
