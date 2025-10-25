@@ -21,6 +21,10 @@ const LIGHT_GRAFIC_TWO_SRC = "./assets/svg/grafica2-white.svg";
 const TUCAN_TWO_ID = "tucanTwo";
 const DARK_TUCAN_TWO_SRC = "./assets/svg/toucan2.svg";
 const LIGHT_TUCAN_TWO_SRC = "./assets/svg/toucan2-white.svg";
+const LENS_BUTTON_ID = "lens";
+const ZOOM_IN_ICON_ID = "zoomInIcon";
+const ZOOM_OUT_ICON_ID = "zoomOutIcon";
+const HIDDEN_CLASS = "hidden";
 
 // 1. Elementos recuperados del DOM
 const themeSwitch = document.getElementById(THEME_SWITCH_ID);
@@ -30,6 +34,9 @@ const tucan = document.getElementById(TUCAN_ID);
 const grafic = document.getElementById(GRAFIC_ID);
 const graficTwo = document.getElementById(GRAFIC_TWO_ID);
 const tucanTwo = document.getElementById(TUCAN_TWO_ID);
+const lensButton = document.getElementById(LENS_BUTTON_ID);
+const zoomInIcon = document.getElementById(ZOOM_IN_ICON_ID);
+const zoomOutIcon = document.getElementById(ZOOM_OUT_ICON_ID);
 
 // 2. Función principal para cambiar el tema
 const toggleTheme = () => {
@@ -261,16 +268,21 @@ if (shareButton) {
 }
 
 // JS para aumentar letra
+const toggleLensAndZoom = () => {
+  if (zoomInIcon && zoomOutIcon) {
+    zoomInIcon.classList.toggle(HIDDEN_CLASS);
+    zoomOutIcon.classList.toggle(HIDDEN_CLASS);
+  }
 
-const lens = document.getElementById("lens");
-const paragraph = document.querySelectorAll(
-  "p, h1, h2, h3, h4, h5, h6, a, li, ts, th",
-);
+  const paragraph = document.querySelectorAll(
+    "p, h1, h2, h3, h4, h5, h6, a, li, th, td, blockquote p, blockquote p b",
+  );
 
-if (lens) {
-  lens.addEventListener("click", () => {
-    paragraph.forEach((e) => {
-      e.classList.toggle("lens");
-    });
+  paragraph.forEach((e) => {
+    e.classList.toggle("lens");
   });
+};
+
+if (lensButton) {
+  lensButton.addEventListener("click", toggleLensAndZoom);
 }

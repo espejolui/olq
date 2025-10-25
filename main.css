@@ -161,10 +161,6 @@ body {
     color: var(--blue);
 }
 
-.lens {
-    font-size: 200%;
-}
-
 .main {
     position: relative;
     min-width: 300px;
@@ -519,6 +515,16 @@ body {
                 height: 25px;
             }
         }
+    }
+    .lens {
+        font-size: 200%;
+    }
+
+    .hidden {
+        display: none;
+    }
+    .lens.zoom_icon {
+        display: block;
     }
 
     @media (width <= 768px) {
