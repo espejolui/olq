@@ -1,25 +1,91 @@
+/* -------------------- Literata -------------------- */
 @font-face {
-    font-family: "literata";
-    src: url("./fonts/Literata-Regular.ttf") format("woff2");
-    font-weight: normal;
+    font-family: "Literata";
+    src: url("./fonts/Literata-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: "literata_italic";
-    src: url("./fonts/Literata-Italic.ttf") format("woff2");
-    font-weight: normal;
+    font-family: "Literata";
+    src: url("./fonts/Literata-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: "jakarta_title";
-    src: url("./fonts/PlusJakartaSans-SemiBold.ttf") format("woff2");
-    font-weight: normal;
+    font-family: "Literata";
+    src: url("./fonts/Literata-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: "jakarta";
-    src: url("./fonts/PlusJakartaSans-Regular.ttf") format("woff2");
-    font-weight: normal;
+    font-family: "Literata";
+    src: url("./fonts/Literata-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Literata";
+    src: url("./fonts/Literata-LightItalic.ttf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* -------------------- Plus Jakarta Sans -------------------- */
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("./fonts/PlusJakartaSans-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("./fonts/PlusJakartaSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("./fonts/PlusJakartaSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("./fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("./fonts/PlusJakartaSans-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("./fonts/PlusJakartaSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -58,7 +124,13 @@ a {
 
 p,
 a {
-    font-family: "jakarta";
+    font-family: "Plus Jakarta Sans";
+    font-weight: 300;
+}
+
+p a {
+    color: var(--violet);
+    text-decoration: underline;
 }
 
 h1,
@@ -68,18 +140,29 @@ h4,
 h5,
 h6,
 li {
-    font-family: "jakarta_title";
+    font-family: "Plus Jakarta Sans";
+    font-weight: 600;
 }
 
-blockquote {
-    font-family: "literata_italic", sans-serif;
+blockquote p {
+    font-family: "Literata", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+blockquote p b {
+    font-family: "Literata", sans-serif;
+    font-weight: 600;
     font-style: italic;
-    font-size: 16px;
 }
 
 body {
     background-color: var(--clear_grey);
     color: var(--blue);
+}
+
+.lens {
+    font-size: 200%;
 }
 
 .main {
@@ -124,8 +207,10 @@ body {
                         display: flex;
                         gap: 60px;
 
-                        li {
+                        li a {
                             font-size: 14px;
+                            font-family: "Plus Jakarta Sans";
+                            font-weight: 700;
                         }
                     }
                 }
@@ -187,25 +272,43 @@ body {
         top: 0;
         left: 0;
         right: 0;
+        min-height: 80vh;
         margin: auto;
         padding: 0 30px;
         text-align: center;
         z-index: -1;
 
         .img_sticky {
-            max-width: 80%;
+            max-width: 65%;
             margin: auto;
-            margin-top: 60px;
+            margin-top: 30px;
+        }
+
+        h1 span {
+            background: -webkit-linear-gradient(
+                var(--clear_violet),
+                var(--violet)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         article {
             h2 {
                 margin-top: 28px;
+                font-size: 10px;
+                letter-spacing: 2px;
                 text-transform: uppercase;
+                font-family: "Plus Jakarta Sans";
+                font-weight: 600;
             }
 
             p {
                 margin: 42px 0;
+                font-family: "Literata";
+                font-weight: 300;
+                font-style: italic;
             }
         }
 
@@ -284,12 +387,18 @@ body {
         justify-content: center;
         row-gap: 10px;
         padding: 60px 10px 60px 30px;
-        margin: 28px 60px 0 60px;
+        margin: 40px 60px 0 60px;
         border-radius: 10px;
         background-color: #f3f3f3;
 
         h4 {
             margin-bottom: 28px;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
         }
 
         @media (width <= 768px) {
@@ -305,10 +414,24 @@ body {
         padding-left: 40px;
         margin: 60px 60px 0 60px;
         box-shadow: var(--my_shadow);
+        font-size: 16px;
+        font-weight: 300;
 
         img {
             width: 100px;
             border-radius: 50%;
+        }
+
+        h4 {
+            font-family: "Plus Jakarta Sans";
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 15px;
         }
 
         div {
@@ -345,6 +468,19 @@ body {
         .comments_two.active {
             display: grid;
         }
+
+        h3 {
+            font-family: "Plus Jakarta Sans";
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
         @media (width <= 768px) {
             margin: 100px 20px 0 20px;
         }
@@ -354,6 +490,7 @@ body {
         padding: 60px 40px;
         background-color: var(--white);
         box-shadow: var(--my_shadow);
+        position: relative;
     }
     .view_comments_button {
         margin: 65px 0;
@@ -386,18 +523,15 @@ body {
 
     @media (width <= 768px) {
         .sidebar {
+            display: flex;
+            width: 250px;
+            border-radius: 0 30px 30px 0;
+            gap: 25px;
+        }
+
+        .publish {
             display: none;
         }
-    }
-
-    .publish {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 10px 30px;
-        border-radius: 30px 0 0 30px;
-        color: var(--black);
-        background-color: var(--yellow);
     }
 
     .responsive {
@@ -407,13 +541,27 @@ body {
         padding: 0 100px 60px 100px;
         background-color: var(--white);
         box-shadow: var(--my_shadow);
+        background-image: url("./assets/brand/letra.png");
+        background-repeat: no-repeat;
+        background-position: 48px 20px;
     }
 
     @media (width <= 768px) {
         .responsive {
-            padding: 0 20px;
+            padding: 70px 20px 0 20px;
+            background-position: -10px 110px;
         }
     }
+}
+
+.publish {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    padding: 10px 30px;
+    border-radius: 30px 0 0 30px;
+    color: var(--black);
+    background-color: var(--yellow);
 }
 
 .read_more_container.about {
@@ -448,15 +596,28 @@ body {
     th,
     td {
         border: 1px solid #00000030;
-        padding: 8px 12px;
+        padding: 20px 35px;
+        font-size: 14px;
+        font-family: "Literata";
+        font-weight: 400;
+    }
+
+    .total-row {
+        font-weight: 700;
+        font-family: "Plus Jakarta Sans";
     }
 
     thead th {
-        background-color: var(--violet);
+        background-color: var(--clear_violet);
         color: var(--white);
-        font-weight: bold;
+        font-weight: 700;
+        font-family: "Plus Jakarta Sans";
         text-align: center;
         border-radius: 8px 8px 0 0;
+    }
+
+    thead th:nth-child(2) {
+        background-color: var(--violet_blue);
     }
 }
 
@@ -469,8 +630,12 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
 }
 
 .featured-row {
-    background: var(--yellow);
+    background-color: var(--yellow);
     font-weight: bold;
+
+    td {
+        color: var(--black);
+    }
 }
 
 .total-row td:nth-child(2) {
@@ -490,19 +655,19 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
 }
 
 .row-60 th {
-    height: 40px;
+    min-height: 40px;
 }
 
 .row-100 td {
-    height: 60px;
+    min-height: 60px;
 }
 
 .row-35 td {
-    height: 35px;
+    min-height: 35px;
 }
 
 .row-55 td {
-    height: 55px;
+    min-height: 55px;
 }
 
 /* Separadores visuales */
@@ -525,7 +690,6 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
     display: grid;
     gap: 30px;
     max-width: 1080px;
-    margin-bottom: 40px;
 
     div {
         display: flex;
@@ -535,7 +699,6 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
             width: 340px;
             height: 300px;
             text-align: right;
-            box-shadow: var(--my_shadow);
             overflow: hidden;
         }
         img {
@@ -543,15 +706,28 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
             height: 220px;
             object-fit: cover;
             object-position: center;
+            background-color: var(--white);
         }
 
         div {
             height: 80px;
             display: grid;
-            align-items: center;
+            align-items: start;
 
             h3 {
-                font-size: 25px;
+                font-family: "Plus Jakarta Sans";
+                font-size: 15px;
+                font-weight: 700;
+
+                span {
+                    background: -webkit-linear-gradient(
+                        var(--clear_violet),
+                        var(--violet)
+                    );
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
             }
         }
     }
@@ -576,28 +752,40 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
 }
 .contact_img {
     width: 100%;
-    height: 500px;
+    height: 400px;
     margin: 60px 0;
     display: grid;
-    align-items: center;
-    background-image: url("./assets/svg/header.svg");
-    background-position: center;
+    background-color: var(--white);
+    background-image: url(./assets/svg/header.svg);
+    background-position: center top 20px;
     background-repeat: no-repeat;
+    background-size: 85%;
+    align-items: end;
 
     div {
         display: grid;
         width: 100%;
         height: 40px;
         align-items: center;
-        margin-top: 100px;
+        margin-bottom: 40px;
         color: var(--white);
-        background-color: var(--violet_blue);
+        background: var(--clear_violet);
+        background: linear-gradient(
+            90deg,
+            rgba(149, 146, 246, 1) 54%,
+            rgba(96, 64, 237, 1) 100%
+        );
+        text-align: right;
 
         h1 {
-            width: 97%;
-            height: 100%;
             text-align: right;
+            margin-right: 20px;
         }
+    }
+}
+@media (width <= 768px) {
+    .contact_img {
+        background-size: 175%;
     }
 }
 
@@ -614,9 +802,20 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
         display: grid;
         align-items: center;
         gap: 25px;
+
+        p {
+            font-family: "Literata";
+            font-style: italic;
+            font-weight: 400;
+        }
     }
 
     .newsletter_form {
+        label {
+            font-family: "Plus Jakarta Sans";
+            font-weight: 700;
+        }
+
         label,
         button {
             display: block;
@@ -635,7 +834,15 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
             width: 250px;
             padding: 10px 20px;
             height: 50px;
-            background-color: var(--violet_blue);
+            color: var(--white);
+            font-weight: 700;
+            font-family: "Plus Jakarta Sans";
+            background: var(--clear_violet);
+            background: linear-gradient(
+                90deg,
+                rgba(149, 146, 246, 1) 50%,
+                rgba(96, 64, 237, 1) 100%
+            );
         }
     }
 
@@ -653,7 +860,12 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
 .footer {
     display: grid;
     color: var(--white);
-    background-color: var(--violet_blue);
+    background: var(--clear_violet);
+    background: linear-gradient(
+        90deg,
+        rgba(149, 146, 246, 1) 54%,
+        rgba(96, 64, 237, 1) 100%
+    );
 
     nav {
         display: flex;
@@ -662,6 +874,7 @@ tbody tr:nth-child(odd):not(.featured-row):not(.gap):not(.total-row) {
         width: 100%;
         margin: auto;
         padding: 25px 0;
+        max-width: 1080px;
 
         .footer_logo_container {
             height: 100%;

@@ -259,3 +259,18 @@ if (shareButton) {
     }
   });
 }
+
+// JS para aumentar letra
+
+const lens = document.getElementById("lens");
+const paragraph = document.querySelectorAll(
+  "p, h1, h2, h3, h4, h5, h6, a, li, ts, th",
+);
+
+if (lens) {
+  lens.addEventListener("click", () => {
+    paragraph.forEach((e) => {
+      e.classList.toggle("lens");
+    });
+  });
+}

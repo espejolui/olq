@@ -67,13 +67,8 @@
 }
 
 .darkmode .pricing_table tbody .featured-row td {
+    color: var(--black);
     background-color: var(--yellow);
-}
-
-.darkmode .sidebar {
-    @media (width <= 768px) {
-        display: none;
-    }
 }
 
 .darkmode .total-row td:nth-child(2) {
@@ -91,4 +86,5 @@
 
 .darkmode .contact_img {
     background-image: url("./assets/svg/header-white.svg");
+    background-color: var(--black);
 }
